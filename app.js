@@ -1,27 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Is your birthday lucky</title>
-</head>
-<body>
-    <h1 id="heading"> Is your birthday lucky ?🎂🤔 </h1>
-    <hr>
-    <br>
+const dateOfBirth = document.querySelector("#birth-date");
+const luckyNumber = document.querySelector("#lucky-number");
+const checkNumberBtn = document.querySelector("#check-btn");
+const msgBox = document.querySelector("#msg-box");
 
-    <label for="birth-date">Date of Birth</label>
-    <input type="date" id="birth-date">
-    <br>
-    <label for="lucky-number">Lucky Number</label>
-     <input type="text" id="lucky-number">
-     <br>
-     <br>
-    <button id = "check-btn">Check Date</button>
-    <p id="msg-box"></p>
+checkNumberBtn.addEventListener("click", checkBirthDateIsLucky);
+function checkBirthDateIsLucky(){
+    const dob = dateOfBirth.value;
+    const sumDate = sumBirthDate(dob);
+    const luckynum = parseInt(luckyNumber.value);
+ 
+    
+    if (dateOfBirth.value == "" || luckyNumber.value == "") 
+    {
+        msgBox.innerText= "Please enter both the fields " ;
 
-    </body>
-    <script src="app.js"></script>
-</html>
+    } 
+    else if (sumDate % luckynum == 0)
+     {
+        msgBox.innerText= "Yippee You are Lucky 🎉!";
+    } 
+    else {
+          msgBox.innerText = "oops! you are not lucky 😔";
+    
+    }
+}
+
+
+function sumBirthDate(dob){
+    dob = dob.replace("-","");
+    dob = dob.replace("-","");
+    console.log(dob);
+    let sum=0;
+    for( let i=0; i<dob.length;i++)
+    {
+        sum = sum + Number(dob.charAt(i));
+    }
+    return sum;
+    console.log(sum);
+    
+}
