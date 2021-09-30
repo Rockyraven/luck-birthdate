@@ -1,0 +1,41 @@
+:root{
+--primary-color: #cc0000
+}
+body{
+    margin: auto;
+    background-color: rgb(223, 226, 175);
+text-align: center;
+padding: 1rem;
+
+}
+h1{
+    color: blue;
+}
+  
+ label,
+  input {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 25%;
+    height: 50%;
+    margin:auto;
+    border-radius: 0.5rem;
+    border-color: yellow;
+    font-size: 15px;
+
+  }
+  label{
+       font-size: x-large;
+       color: var(--primary-color);
+       
+  }
+  button{
+    color: var(--primary-color);
+  }
+  button,
+  p{
+      font-size: large;
+      text-align: center;
+      color: blue;
+  }
